@@ -1,0 +1,22 @@
+version: '3'
+services:
+  db:
+    container_name: latest_rails_db
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+  web:
+    container_name: latest_rails_web
+    build: .
+    command: bundle exec rails s -b '0.0.0.0'
+    volumes:
+      - .:/latest_rails
+      - ./config/database.yml:/latest_rails/config/database.yml
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    entrypoint: ./entrypoint.sh
+    environment:
+      LATEST_RAILS_DATABASE_PASSWORD: admin
