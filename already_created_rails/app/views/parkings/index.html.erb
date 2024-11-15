@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>駐車場一覧</h1>
+
+<div id="parkings">
+  <% @parkings.each do |parking| %>
+    <%= render parking %>
+    <p>
+      <%= link_to "駐車場を表示する", parking %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "駐車場を新規登録する", new_parking_path %>

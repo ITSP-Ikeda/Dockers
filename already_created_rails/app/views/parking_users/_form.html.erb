@@ -1,0 +1,27 @@
+<%= form_with(model: parking_user) do |form| %>
+  <% if parking_user.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(parking_user.errors.count, "error") %> prohibited this parking_user from being saved:</h2>
+
+      <ul>
+        <% parking_user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :parking_user_name, style: "display: block" %>
+    <%= form.text_field :parking_user_name %>
+  </div>
+
+  <div>
+    <%= form.label :remark, style: "display: block" %>
+    <%= form.text_field :remark %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

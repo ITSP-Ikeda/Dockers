@@ -1,0 +1,12 @@
+<div id="<%= dom_id parking_area %>">
+  <p>
+    <strong>駐車場名:</strong>
+    <%= parking_area.parking_area_name %>
+  </p>
+
+  <p>
+    <strong>駐車場区画名:</strong>
+    <%= Parking.find(parking_area.parking_id).parking_name %>
+  </p>
+
+</div>

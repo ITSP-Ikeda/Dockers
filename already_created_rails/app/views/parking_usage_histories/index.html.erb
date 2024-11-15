@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>駐車場区画使用履歴一覧</h1>
+
+<div id="parking_usage_histories">
+  <% @parking_usage_histories.each do |parking_usage_history| %>
+    <%= render parking_usage_history %>
+    <p>
+      <%= link_to "駐車場区画使用履歴を表示", parking_usage_history %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "駐車場区画使用履歴を新規登録", new_parking_usage_history_path %>

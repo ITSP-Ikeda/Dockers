@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>支払一覧（TODO:ここは他のテーブルから自動計算させたいが、実装出来ていない）</h1>
+
+<div id="payments">
+  <% @payments.each do |payment| %>
+    <%= render payment %>
+    <p>
+      <%= link_to "支払い内容を確認する", payment %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "支払い新規登録", new_payment_path %>

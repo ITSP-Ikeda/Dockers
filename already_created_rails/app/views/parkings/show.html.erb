@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @parking %>
+
+<div>
+  <%= link_to "駐車場を修正する", edit_parking_path(@parking) %> |
+  <%= link_to "駐車場一覧に戻る", parkings_path %>
+
+  <%= button_to "駐車場を削除する", @parking, method: :delete %>
+</div>

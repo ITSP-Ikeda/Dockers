@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>支払い先一覧</h1>
+
+<div id="payment_destinations">
+  <% @payment_destinations.each do |payment_destination| %>
+    <%= render payment_destination %>
+    <p>
+      <%= link_to "支払い先表示", payment_destination %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "支払い先新規登録", new_payment_destination_path %>

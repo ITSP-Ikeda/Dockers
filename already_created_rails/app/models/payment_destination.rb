@@ -1,0 +1,2 @@
+class PaymentDestination < ApplicationRecord
+end

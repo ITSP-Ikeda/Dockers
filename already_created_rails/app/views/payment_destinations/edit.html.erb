@@ -1,0 +1,10 @@
+<h1>支払い先修正</h1>
+
+<%= render "form", payment_destination: @payment_destination %>
+
+<br>
+
+<div>
+  <%= link_to "支払い先を表示", @payment_destination %> |
+  <%= link_to "支払い先一覧に戻る", payment_destinations_path %>
+</div>

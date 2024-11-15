@@ -1,0 +1,42 @@
+<%= form_with(model: parking_usage_history) do |form| %>
+  <% if parking_usage_history.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(parking_usage_history.errors.count, "error") %> prohibited this parking_usage_history from being saved:</h2>
+
+      <ul>
+        <% parking_usage_history.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :year, style: "display: block" %>
+    <%= form.number_field :year %>
+  </div>
+
+  <div>
+    <%= form.label :month, style: "display: block" %>
+    <%= form.number_field :month %>
+  </div>
+
+  <div>
+    <%= form.label :parking_area_id, style: "display: block" %>
+    <%= form.collection_select :parking_area_id, ParkingArea.all, :id, :parking_area_name %>
+  </div>
+
+  <div>
+    <%= form.label :parking_user_id, style: "display: block" %>
+    <%= form.collection_select :parking_user_id, ParkingUser.all, :id, :parking_user_name %>
+  </div>
+
+  <div>
+    <%= form.label :amount, style: "display: block" %>
+    <%= form.number_field :amount %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @parking_usage_history %>
+
+<div>
+  <%= link_to "駐車場区画使用履歴を修正する", edit_parking_usage_history_path(@parking_usage_history) %> |
+  <%= link_to "駐車場区画使用履歴一覧に戻る", parking_usage_histories_path %>
+
+  <%= button_to "駐車場区画使用履歴を削除する", @parking_usage_history, method: :delete %>
+</div>

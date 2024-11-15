@@ -1,0 +1,27 @@
+<%= form_with(model: parking_area) do |form| %>
+  <% if parking_area.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(parking_area.errors.count, "error") %> prohibited this parking_area from being saved:</h2>
+
+      <ul>
+        <% parking_area.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :parking_area_name, style: "display: block" %>
+    <%= form.text_field :parking_area_name %>
+  </div>
+
+  <div>
+    <%= form.label :parking_id, style: "display: block" %>
+    <%= form.collection_select :parking_id, Parking.all, :id, :parking_name %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
